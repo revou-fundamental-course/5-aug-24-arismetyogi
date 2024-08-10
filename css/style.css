@@ -28,5 +28,19 @@ body {
     form {
       max-width: 50vw;
     }
+    .button {
+      margin: auto;
+      /* align-items: center; */
+      button {
+        justify-items: center;
+        background-color: var(--sky-blue);
+        transition: all 0.3s;
+        border-radius: 4px;
+      }
+      :hover {
+        background-color: var(--steel-blue);
+        color: white;
+      }
+    }
   }
 }

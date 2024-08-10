@@ -48,9 +48,26 @@
           <legend>Age</legend>
           <input type="number" name="age" id="age" /> <span>years</span>
         </fieldset>
-        <button type="submit">Calculate BMI</button>
-        <button type="reset">Reset</button>
+        <fieldset class="input activity-level">
+          <legend>Activity Level</legend>
+          <select name="activity-level" id="activity-level">
+            <option value="1.2" selected>Not Active</option>
+            <option value="1.375">Lightly Active</option>
+            <option value="1.55">Moderately Active</option>
+            <option value="1.725">Very Active</option>
+            <option value="1.9">Athlete</option>
+          </select>
+        </fieldset>
+        <div class="button">
+          <button type="submit" onclick="CalculateBMI()">Calculate BMI</button>
+          <button type="reset">Reset</button>
+        </div>
       </form>
+      <div class="result" id="result"></div>
+      <div class="disclaimer">
+        This tool provides estimates based on the information you provide. For
+        personalized advice, consult a healthcare professional.
+      </div>
     </main>
 
     <footer></footer>
