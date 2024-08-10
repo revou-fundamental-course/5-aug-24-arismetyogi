@@ -1,0 +1,32 @@
+:root {
+  --serene: #a2c2e4;
+  --light-sky-blue: #b8d4e6;
+  --powder-blue: #9ab4ce;
+  --sky-blue: #8db9e2;
+  --periwinkle-blue: #a4c6e0;
+  --steel-blue: #7c9ab7;
+}
+
+body {
+  background-color: whitesmoke;
+
+  header {
+    width: 90vw;
+    margin: auto;
+    h1 {
+      color: var(--steel-blue);
+      font: 60px bold arial;
+      text-align: center;
+    }
+  }
+
+  main {
+    background-color: var(--light-sky-blue);
+    width: 50vw;
+    padding: 1rem 0.5rem;
+    margin: auto;
+    form {
+      max-width: 50vw;
+    }
+  }
+}

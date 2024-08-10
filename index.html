@@ -5,14 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HMZ BMI Calculator</title>
 
+    <link href="resources/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
       <h1>HMZ BMI Calculator</h1>
+      <h3>Achieve Your Health Goals: HMZ BMI Calculator</h3>
+      <p>
+        Unlock Your Best Self: Our BMI Calculator Makes It Easy! Track your body
+        mass index and get personalized insights to help you reach your health
+        goals. It’s time to take control, stay motivated, and feel great in your
+        own skin!
+      </p>
     </header>
 
-    <main></main>
+    <main>
+      <form action="#" method="post">
+        <fieldset class="input gender">
+          <legend>Gender</legend>
+          <input
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+            aria-selected="true"
+          />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+        </fieldset>
+        <fieldset class="input weight">
+          <legend>Weight</legend>
+          <input type="number" name="weight" id="weight" /> <span>kg</span>
+        </fieldset>
+        <fieldset class="input height">
+          <legend>Height</legend>
+          <input type="number" name="height" id="height" /> <span>cm</span>
+        </fieldset>
+        <fieldset class="input age">
+          <legend>Age</legend>
+          <input type="number" name="age" id="age" /> <span>years</span>
+        </fieldset>
+        <button type="submit">Calculate BMI</button>
+        <button type="reset">Reset</button>
+      </form>
+    </main>
 
     <footer></footer>
 
