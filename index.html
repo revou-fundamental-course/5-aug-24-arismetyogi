@@ -21,53 +21,53 @@
       </p>
     </header>
 
-    <main>
-      <form action="#" method="post">
-        <fieldset class="input gender">
-          <legend>Gender</legend>
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            value="male"
-            aria-selected="true"
-          />
-          <label for="male">Male</label>
-          <input type="radio" id="female" name="gender" value="female" />
-          <label for="female">Female</label>
-        </fieldset>
-        <fieldset class="input weight">
-          <legend>Weight</legend>
-          <input type="number" name="weight" id="weight" /> <span>kg</span>
-        </fieldset>
-        <fieldset class="input height">
-          <legend>Height</legend>
-          <input type="number" name="height" id="height" /> <span>cm</span>
-        </fieldset>
-        <fieldset class="input age">
-          <legend>Age</legend>
-          <input type="number" name="age" id="age" /> <span>years</span>
-        </fieldset>
-        <fieldset class="input activity-level">
-          <legend>Activity Level</legend>
-          <select name="activity-level" id="activity-level">
-            <option value="1.2" selected>Not Active</option>
-            <option value="1.375">Lightly Active</option>
-            <option value="1.55">Moderately Active</option>
-            <option value="1.725">Very Active</option>
-            <option value="1.9">Athlete</option>
-          </select>
-        </fieldset>
-        <div class="button">
-          <button type="submit" onclick="CalculateBMI()">Calculate BMI</button>
-          <button type="reset">Reset</button>
+    <main class="flex">
+      <aside>
+        <form action="/" name="bmiform">
+          <fieldset class="input gender" id="gender">
+            <legend>Gender</legend>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+          </fieldset>
+          <fieldset class="input weight">
+            <legend>Weight</legend>
+            <input type="number" name="weight" id="weight" /> <span>kg</span>
+          </fieldset>
+          <fieldset class="input height">
+            <legend>Height</legend>
+            <input type="number" name="height" id="height" /> <span>cm</span>
+          </fieldset>
+          <fieldset class="input age">
+            <legend>Age</legend>
+            <input type="number" name="age" id="age" /> <span>years</span>
+          </fieldset>
+          <fieldset class="input activity-level">
+            <legend>Activity Level</legend>
+            <select name="activity-level" id="activity-level">
+              <option value="1.2" selected>Not Active</option>
+              <option value="1.375">Lightly Active</option>
+              <option value="1.55">Moderately Active</option>
+              <option value="1.725">Very Active</option>
+              <option value="1.9">Athlete</option>
+            </select>
+          </fieldset>
+          <div class="buttons">
+            <button type="submit" :onsubmit="CalculateBMI()">
+              Calculate BMI
+            </button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+        <div class="disclaimer">
+          This tool provides estimates based on the information you provide. For
+          personalized advice, consult a healthcare professional.
         </div>
-      </form>
-      <div class="result" id="result"></div>
-      <div class="disclaimer">
-        This tool provides estimates based on the information you provide. For
-        personalized advice, consult a healthcare professional.
-      </div>
+      </aside>
+      <aside>
+        <div class="result" hidden id="result">Your BMI Result</div>
+      </aside>
     </main>
 
     <footer></footer>
