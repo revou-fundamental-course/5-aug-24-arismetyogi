@@ -140,7 +140,7 @@ body {
           margin-bottom: 2rem;
         }
         .category {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: bold;
         }
         .activity-level {
@@ -151,14 +151,25 @@ body {
           margin-bottom: 1rem;
         }
       }
+      .consult {
+        text-align: center;
+        a {
+        margin: auto;
+        background-color: salmon;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        padding: .25rem 1rem .25rem 1rem;
+        border-radius: .25rem;
+      }
+    }
     }
   }
 
   footer {
     position: relative;
-    width: 90vw;
+    width: 100%;
     margin: auto;
-    background-color: whitesmoke;
     padding: 1rem;
     border-radius: 10px;
     .tool-uses {
@@ -176,59 +187,56 @@ body {
     }
     .footer{
       position: absolute;
-      background:#000;
+      background:var(--steel-blue);
       padding:30px 0px;
       /* font-family: 'Play', sans-serif; */
       text-align:center;
       left: 0;
       right: 0;
-      }
-      
-      .footer .row{
+      .row{
       width:100%;
       margin:1% 0%;
       padding:0.6% 0%;
-      color:gray;
+      color: white;
       font-size:0.8em;
+      .link {
+        margin-bottom: 1.5rem;
       }
-      
-      .footer .row a{
+      }
+      .row a{
       text-decoration:none;
-      color:gray;
+      color:white;
       transition:0.5s;
       }
-      
-      .footer .row a:hover{
+      .row a:hover{
       color:#fff;
       }
-      
-      .footer .row ul{
+      .row ul{
       width:100%;
       }
-      
-      .footer .row ul li{
+      .row ul li{
       display:inline-block;
       margin:0px 30px;
       }
-      
-      .footer .row a i{
+      .row a i{
       font-size:2em;
       margin:0% 1%;
       }
-      
-      @media (max-width:720px){
-      .footer{
-      text-align:left;
-      padding:5%;
-      }
-      .footer .row ul li{
-      display:block;
-      margin:10px 0px;
-      text-align:left;
-      }
-      .footer .row a i{
-      margin:0% 3%;
-      }
-      }
+    }
   }
 }
+
+@media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }
