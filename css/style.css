@@ -211,7 +211,9 @@ body {
       transition:0.5s;
       }
       .row a:hover{
-      color:#fff;
+      color:salmon;
+      opacity: .9;
+      font-size: larger;
       }
       .row ul{
       width:100%;
