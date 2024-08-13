@@ -8,6 +8,7 @@
     <link href="resources/favicon/favicon.ico" rel="icon" type="image/x-icon" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -21,29 +22,29 @@
       </p>
     </header>
 
-    <main class="flex">
-      <aside>
-        <form action="/" name="bmiform">
-          <fieldset class="input gender" id="gender">
+    <main class="main">
+      <aside class="form-input">
+        <div class="form">
+          <div class="input gender" id="gender">
             <legend>Gender</legend>
             <input type="radio" id="male" name="gender" value="male" />
             <label for="male">Male</label>
             <input type="radio" id="female" name="gender" value="female" />
             <label for="female">Female</label>
-          </fieldset>
-          <fieldset class="input weight">
+          </div>
+          <div class="input weight">
             <legend>Weight</legend>
-            <input type="number" name="weight" id="weight" /> <span>kg</span>
-          </fieldset>
-          <fieldset class="input height">
+            <input type="number" name="weight" id="weight" min="40" max="300" required/> <span>kg</span>
+          </div>
+          <div class="input height">
             <legend>Height</legend>
-            <input type="number" name="height" id="height" /> <span>cm</span>
-          </fieldset>
-          <fieldset class="input age">
+            <input type="number" name="height" id="height" min="80" max="250" required/> <span>cm</span>
+          </div>
+          <div class="input age">
             <legend>Age</legend>
-            <input type="number" name="age" id="age" /> <span>years</span>
-          </fieldset>
-          <fieldset class="input activity-level">
+            <input type="number" name="age" id="age" min="12" max="150" required/> <span>years</span>
+          </div>
+          <div class="input activity-level">
             <legend>Activity Level</legend>
             <select name="activity-level" id="activity-level">
               <option value="1.2" selected>Not Active</option>
@@ -52,21 +53,21 @@
               <option value="1.725">Very Active</option>
               <option value="1.9">Athlete</option>
             </select>
-          </fieldset>
+          </div>
           <div class="buttons">
-            <button type="submit" :onsubmit="CalculateBMI()">
+            <button class="calculateBMI">
               Calculate BMI
             </button>
-            <button type="reset">Reset</button>
+            <!-- <button class="reset-form" type="reset">Reset</button> -->
           </div>
-        </form>
+        </div>
         <div class="disclaimer">
           This tool provides estimates based on the information you provide. For
           personalized advice, consult a healthcare professional.
         </div>
       </aside>
-      <aside>
-        <div class="result" hidden id="result">Your BMI Result</div>
+      <aside class="form-result" hidden>
+        <div class="result" id="result"></div>
       </aside>
     </main>
 

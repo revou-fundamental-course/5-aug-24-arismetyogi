@@ -1,5 +1,5 @@
 :root {
-  --serene: #a2c2e4;
+  --serene: #b9bfc6;
   --light-sky-blue: #b8d4e6;
   --powder-blue: #9ab4ce;
   --sky-blue: #8db9e2;
@@ -9,44 +9,83 @@
 
 body {
   background-color: whitesmoke;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 
   header {
     width: 90vw;
     margin: auto;
     h1 {
       color: var(--steel-blue);
-      font: 60px bold arial;
+      font-size: 60px;
       text-align: center;
     }
   }
 
   main {
-    background-color: var(--light-sky-blue);
-    width: 50vw;
-    padding: 1rem 0.5rem;
-    margin: auto;
-    form {
-      max-width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    .form-input{
+      background-color: var(--light-sky-blue);
+      width: 50%;
+      padding: 1rem 0.5rem;
+      margin: auto;
+      border-radius: 10px;
+      .form {
+        * {
+          border: none;
+          border-radius: .25rem;
+        }
+        .input {
+          margin-top: .75rem;
+          margin-bottom: .75rem;
+          width: 100%;
+        }:invalid{
+          margin: 0;
+          border: 1px solid salmon;
+        }
+      }
       .buttons {
+        width: 50%;
         display: flex;
         justify-content: space-evenly;
-        margin: 10px 20px;
+        margin: 20px auto;
         /* border: 1px solid salmon; */
         box-sizing: border-box;
-        button {
+        .calculateBMI {
+          border: none;
+          background-color: salmon;
           justify-items: center;
-          background-color: var(--sky-blue);
+          border-radius: 10px;
           transition: all 0.3s;
-          border-radius: 4px;
+          padding-top: .5rem;
+          padding-bottom: .5rem;
         }
         :hover {
           background-color: var(--steel-blue);
           color: white;
         }
+        .reset-form {
+          border: none;
+          background-color:var(--serene);
+          transition: all 0.3s;
+          border-radius: 10px;
+          color: white;
+        }:hover {
+          background-color: var(--sky-blue);
+          color: whitesmoke;
+      }
       }
     }
-    .result {
-      margin: 10px auto;
+    .form-result{
+      width: 50%;
+      border-radius: 10px;
+      bottom: 0;
+      height: 100%;
+      .result {
+        background-color: var(--periwinkle-blue);
+      }
     }
   }
 }
