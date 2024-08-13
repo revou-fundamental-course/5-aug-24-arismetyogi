@@ -14,12 +14,12 @@
     <header>
       <h1>HMZ BMI Calculator</h1>
       <h3>Achieve Your Health Goals: HMZ BMI Calculator</h3>
-      <p>
+      <article>
         Unlock Your Best Self: Our BMI Calculator Makes It Easy! Track your body
         mass index and get personalized insights to help you reach your health
         goals. It’s time to take control, stay motivated, and feel great in your
         own skin!
-      </p>
+      </article>
     </header>
 
     <main class="main">
@@ -27,9 +27,9 @@
         <form>
           <div class="input gender" id="gender">
             <legend>Gender</legend>
-            <input type="radio" id="male" name="gender" value="male" />
+            <input type="radio" id="male" name="gender" value="male" checked required/>
             <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female" />
+            <input type="radio" id="female" name="gender" value="female" required/>
             <label for="female">Female</label>
           </div>
           <div class="input weight">
@@ -61,10 +61,10 @@
             <button class="reset-form" type="reset">Reset</button>
           </div>
         </form>
-        <div class="disclaimer">
-          This tool provides estimates based on the information you provide. For
-          personalized advice, consult a healthcare professional.
-        </div>
+        <article class="disclaimer">
+          <p><strong>HMZ BMI Calculator</strong> is a general tool for estimating body weight healthiness based on height and weight only and may not be accurate for athletes, children, the elderly, or pregnant women. </p>
+          <p>Consult a healthcare professional for a comprehensive health assessment and personalized medical advice. Use it as a guideline, not a definitive measure of health.</p>
+        </article>
       </aside>
 
       <aside class="form-result" hidden>
@@ -72,7 +72,27 @@
       </aside>
     </main>
 
-    <footer></footer>
+    <footer>
+      <article class="tool-uses">
+        <h4>Primary Uses:</h4>
+          <ol>
+            <li><strong>Screening</strong>: BMI is often used as a screening tool to categorize individuals into different weight categories. This helps in identifying potential health risks associated with each category.</li>
+            <li><strong>Health Risks</strong>: High or low BMI values can indicate increased risks of various health conditions, eg:
+              <ul class="weight-class">
+                <li class="weight-class"><em>Underweight</em>: Can be associated with malnutrition, osteoporosis, and weakened immune function.
+                </li>
+                <li class="weight-class"><em>Overweight and Obesity</em>: Can be linked to higher risks of heart disease, diabetes, high blood pressure, and certain cancers.</li>
+              </ul>
+            </li>
+            <li><strong>Tracking Changes</strong>: BMI can be used to monitor changes in body weight over time.</li>
+            <li><strong>Guiding Interventions</strong>: Based on BMI results, healthcare providers can recommend appropriate lifestyle changes, dietary adjustments, and physical activity to help individuals achieve a healthier weight.</li>
+          </ol>
+      </article>
+      <section class="contact">
+
+      </section>
+      <section class="more"></section>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>

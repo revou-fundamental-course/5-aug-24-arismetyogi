@@ -7,17 +7,38 @@
   --steel-blue: #7c9ab7;
 }
 
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: whitesmoke;
+  background: linear-gradient(135deg, rgba(238,174,202,.3) 0%, rgba(148,187,233,.5) 100%);
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 
   header {
-    width: 90vw;
     margin: auto;
-    h1 {
-      color: var(--steel-blue);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: azure;
+    h1 {  
+      color: transparent;
+      margin-bottom: 1.5rem ;
       font-size: 60px;
+      text-align: center;
+      background:linear-gradient(135deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+      background-clip: text;
+    }
+    h3 {
+      font-size: larger;
+      margin-bottom: .5rem;
+      text-align: center;
+    }
+    article {
       text-align: center;
     }
   }
@@ -27,17 +48,29 @@ body {
     justify-content: space-around;
     max-width: 80vw;
     margin: auto;
-    gap: 1rem;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+    align-items: stretch;
     .form-input{
+      flex-grow: 2;
       background-color: var(--light-sky-blue);
       width: 50%;
-      padding: 1rem 0.5rem;
+      padding: 1rem;
       margin: auto;
       border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       form {
         * {
           border: none;
           border-radius: .25rem;
+        }
+        input:not([type=radio]) {
+          text-align: right;
+          width: 50%;
+          line-height: 1.5rem;
+          padding-right: .25rem;
+          margin-right: .7rem;
+          font-size: 1rem;
         }
         .input {
           margin-top: .75rem;
@@ -47,9 +80,14 @@ body {
           margin: 0;
           border: 1px solid salmon;
         }
+        select{
+          width: 50%;
+          line-height: 1.5rem;
+          padding: .5rem;
+        }
       }
       .buttons {
-        width: 50%;
+        width: 75%;
         display: flex;
         justify-content: space-evenly;
         margin: 20px auto;
@@ -61,21 +99,24 @@ body {
           justify-items: center;
           border-radius: 10px;
           transition: all 0.3s;
-          padding-top: .5rem;
-          padding-bottom: .5rem;
-        }
-        :hover {
-          background-color: var(--steel-blue);
+          padding: .5rem 1.5rem;
+          box-sizing: border-box;
           color: white;
         }
+        .calculateBMI:hover {
+          background-color: whitesmoke;
+          color: salmon;
+          font-weight: bold;
+        }
         .reset-form {
+          min-width: 25%;
           border: none;
           background-color:var(--serene);
           transition: all 0.3s;
           border-radius: 10px;
           color: white;
         }:hover {
-          background-color: var(--sky-blue);
+          background-color: slategray;
           color: whitesmoke;
       }
       }
@@ -83,12 +124,47 @@ body {
     .form-result{
       background-color: var(--light-sky-blue);
       width: 50%;
-      padding: 1rem 0.5rem;
+      padding: 1.5rem;
       margin: auto;
       border-radius: 10px;;
       min-height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       .result {
-        
+        .bmi, .category {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        .category {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+        .activity-level {
+          margin-bottom: 1rem;
+        }
+        .advice {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  footer {
+    width: 90vw;
+    margin: auto;
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 10px;
+    .tool-uses {
+      max-width: 90%;
+      margin: auto;
+      h4 {
+        font-size: x-large;
+        margin-left: -1.5rem;
+        margin-bottom: .5rem;
+      }
+      .weight-class{
+        margin-left: 1rem;
       }
     }
   }
