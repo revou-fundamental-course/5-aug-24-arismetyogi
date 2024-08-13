@@ -163,7 +163,20 @@ body {
         border-radius: .25rem;
       }
     }
+  }
+  .tool-uses {
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    h4 {
+      font-size: x-large;
+      margin-left: -1.5rem;
+      margin-bottom: .5rem;
     }
+    .weight-class{
+      margin-left: 1rem;
+    }
+  }
   }
 
   footer {
@@ -172,19 +185,6 @@ body {
     margin: auto;
     padding: 1rem;
     border-radius: 10px;
-    .tool-uses {
-      max-width: 90%;
-      margin: auto;
-      margin-bottom: 1.5rem;
-      h4 {
-        font-size: x-large;
-        margin-left: -1.5rem;
-        margin-bottom: .5rem;
-      }
-      .weight-class{
-        margin-left: 1rem;
-      }
-    }
     .footer{
       position: absolute;
       background:var(--steel-blue);
