@@ -57,6 +57,7 @@ body {
     .form-input, .form-result, .tool-uses {
       flex:1 0 41%;
       margin: 1rem;
+      gap: 2rem;
     }
     .form-input{
       background-color: var(--light-sky-blue);
@@ -163,20 +164,21 @@ body {
         border-radius: .25rem;
       }
     }
-  }
-  .tool-uses {
-    max-width: 90%;
-    margin: auto;
-    margin-bottom: 1.5rem;
-    h4 {
-      font-size: x-large;
-      margin-left: -1.5rem;
-      margin-bottom: .5rem;
     }
-    .weight-class{
-      margin-left: 1rem;
+    .tool-uses {
+      /* max-width: 90%; */
+      margin: auto;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      h4 {
+        font-size: x-large;
+        margin-left: -1.5rem;
+        margin-bottom: .5rem;
+      }
+      .weight-class{
+        margin-left: 1rem;
+      }
     }
-  }
   }
 
   footer {
