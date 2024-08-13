@@ -25,6 +25,8 @@ body {
   main {
     display: flex;
     justify-content: space-around;
+    max-width: 80vw;
+    margin: auto;
     gap: 1rem;
     .form-input{
       background-color: var(--light-sky-blue);
@@ -32,7 +34,7 @@ body {
       padding: 1rem 0.5rem;
       margin: auto;
       border-radius: 10px;
-      .form {
+      form {
         * {
           border: none;
           border-radius: .25rem;
@@ -79,12 +81,14 @@ body {
       }
     }
     .form-result{
+      background-color: var(--light-sky-blue);
       width: 50%;
-      border-radius: 10px;
-      bottom: 0;
-      height: 100%;
+      padding: 1rem 0.5rem;
+      margin: auto;
+      border-radius: 10px;;
+      min-height: 100%;
       .result {
-        background-color: var(--periwinkle-blue);
+        
       }
     }
   }

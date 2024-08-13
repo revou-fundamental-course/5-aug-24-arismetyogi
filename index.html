@@ -24,7 +24,7 @@
 
     <main class="main">
       <aside class="form-input">
-        <div class="form">
+        <form>
           <div class="input gender" id="gender">
             <legend>Gender</legend>
             <input type="radio" id="male" name="gender" value="male" />
@@ -55,17 +55,18 @@
             </select>
           </div>
           <div class="buttons">
-            <button class="calculateBMI">
+            <button class="calculateBMI" type="submit">
               Calculate BMI
             </button>
-            <!-- <button class="reset-form" type="reset">Reset</button> -->
+            <button class="reset-form" type="reset">Reset</button>
           </div>
-        </div>
+        </form>
         <div class="disclaimer">
           This tool provides estimates based on the information you provide. For
           personalized advice, consult a healthcare professional.
         </div>
       </aside>
+
       <aside class="form-result" hidden>
         <div class="result" id="result"></div>
       </aside>
