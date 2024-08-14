@@ -1,54 +1,22 @@
-
 function getGender() {
-    const genderInput = document.getElementsByName('gender');
-    let genderval = null;
-    for (let i = 0; i < genderInput.length; i++) {
-        if (genderInput[i].checked) {
-            genderval = genderInput[i].value
-        }
-    }
-    
-    return genderval;
+    const genderInputs = document.getElementsByName('gender');
+    const checkedInput = Array.from(genderInputs).find(input => input.checked);
+    return checkedInput ? checkedInput.value : null;
 }
-const weightInput = document.querySelector('#weight');
-const heightInput = document.querySelector('#height');
-const ageInput = document.querySelector('#age');
-const activityLevelInput = document.querySelector('#activity-level');
 
-const calculate = document.querySelector('.calculateBMI');
-const reset = document.querySelector('.reset-form');
-const resultside = document.querySelector('.form-result');
-const resultDiv = document.querySelector('#result');
+function calculateBMI(weight, height){
+    return weight / Math.pow(height, 2);
+}
 
-calculate.addEventListener('click', function(e) {
-    e.preventDefault();
-    // Get user input
-    let gender = getGender();
-    let weight = parseFloat(weightInput.value);
-    let height = parseFloat(heightInput.value)/100;
-    let age = parseInt(ageInput.value);
-    let activityLevel = parseFloat(activityLevelInput.value);
-    // Validate input
-    if (!height || !weight || !age ) {
-        alert("Please enter valid height, weight and age.")        
-        return;
-    }
-    // Calculate BMI
-    const bmi = (weight / (height * height));
-    // Calculate BMR
-    let bmr;
+function calculateBMR(gender, weight, height, age){
     if (gender === 'male') {
-        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age + 5; // height in cm
-    } else if (gender === 'female') {
-        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age - 161; // height in cm
+        return 10 * weight + 6.25 * (height * 100) - 5 * age + 5;
+    } else {
+        return 10 * weight + 6.25 * (height * 100) - 5 * age - 161;
     }
-    // Calculate TDEE
-    const tdee = bmr * activityLevel;
+}
 
-    // Determine BMI category
-    let category;
-    let color;
-    let suggestion;
+function bmiCategory (bmi) {
     if (bmi < 18.5) {
         category = "Underweight (BMI < 18.5)";
         color = "#e95";
@@ -66,10 +34,49 @@ calculate.addEventListener('click', function(e) {
         color = "#e76f51";
         suggestion = "Develop a comprehensive weight loss plan with a healthcare provider. Focus on a nutritious, calorie-controlled diet and regular exercise. Consider behavioral changes and possibly medical interventions. Monitor progress and seek support.";
     }
+    return {
+        'category' : category,
+        'color' : color,
+        'suggestion' : suggestion
+    }
+}
 
+const calculate = document.querySelector('.calculateBMI');
+const reset = document.querySelector('.reset-form');
+const resultSide = document.querySelector('.form-result');
+const resultDiv = document.querySelector('#result');
+
+calculate.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Get user input
+    let gender = getGender();
+    const weight = parseFloat(document.querySelector('#weight').value);
+    const height = parseFloat(document.querySelector('#height').value)/100;
+    const age = parseFloat(document.querySelector('#age').value);
+    const activityLevel = parseFloat(document.querySelector('#activity-level').value);
+
+    // Validate input
+    if (!height || !weight || !age ) {
+        alert("Please enter valid height, weight and age.")
+        return;
+    }
+    // Calculate BMI
+    const bmi = calculateBMI(weight, height);
+
+    // Calculate BMR
+    const bmr = calculateBMR(gender, weight, height, age);
+
+    // Calculate TDEE
+    const tdee = bmr * activityLevel;
+
+    // Determine BMI category
+    const category = bmiCategory(bmi).category;
+    const color = bmiCategory(bmi).color;
+    const suggestion = bmiCategory(bmi).suggestion;
 
     // Display result
-    resultside.hidden=false;
+    resultSide.hidden=false;
     resultDiv.innerHTML =
         `
         <p class="bmi" style="color: ${color}; text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);">Your BMI is<br> ${bmi.toFixed(2)}</p>
@@ -84,5 +91,5 @@ calculate.addEventListener('click', function(e) {
 })
 
 reset.addEventListener('click', function(){
-    resultside.hidden=true;
+    resultSide.hidden=true;
 })

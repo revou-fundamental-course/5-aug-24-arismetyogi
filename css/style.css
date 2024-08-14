@@ -17,35 +17,36 @@
 
 body {
   background: linear-gradient(135deg, rgba(238,174,202,.3) 0%, rgba(148,187,233,.5) 100%);
-  font-optical-sizing: auto;
+  /* font-optical-sizing: auto; */
 
-  header {
+  .header {
     margin: auto;
     margin-bottom: 1.5rem;
     padding: 1rem;
     position: sticky;
     top: 0;
     background-color: azure;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 24px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1.25rem 1.5rem;
     h1 {
       color: transparent;
       margin-bottom: 1.5rem ;
-      font-size: 60px;
+      font-size: 4rem;
       text-align: center;
-      background:linear-gradient(135deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+      background: -webkit-linear-gradient(135deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+      background: -moz-linear-gradient(135deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
       background-clip: text;
     }
-    h3 {
-      font-size: larger;
+    .punchline {
+      font-size: 1.5rem;
       margin-bottom: .5rem;
       text-align: center;
     }
-    article {
+    .details {
       text-align: center;
     }
   }
 
-  main {
+  .main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -54,18 +55,40 @@ body {
     margin: auto;
     margin-bottom: 1.5rem;
     gap: 1.5rem;
+    line-height: 1.5;
     .form-input, .form-result, .tool-uses {
+      align-items: flex-start;
       flex:1 0 41%;
       margin: 1rem;
       gap: 2rem;
     }
     .form-input{
       background-color: var(--light-sky-blue);
+      max-width: 480px;
       padding: 1rem;
       margin: 1rem auto;
+      justify-items: center;
       border-radius: 10px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 24px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 1.25rem 1.5rem;
+
       form {
+        .form_input {
+          width: 100%;
+          margin-bottom: 1rem;
+          box-sizing: border-box;
+          background-color: rgba(0, 0, 0, 0.05);
+          margin: .25rem;
+          padding: .5rem;
+          border-radius: .5rem;
+          legend {
+            font-weight: 500;
+            font-style: oblique;
+            color: #fff;
+          }
+        }
+        .input :invalid{
+          border-bottom: 1px solid salmon;
+        }
         input:not([type=radio]), select {
           border: none;
           border-radius: .25rem;
@@ -74,13 +97,6 @@ body {
           line-height: 1.5rem;
           padding-right: .25rem;
           font-size: .75rem;
-        }
-        .input {
-          margin: 2rem auto;
-          width: 100%;
-          box-sizing: border-box;
-        }:invalid{
-          border: -1px solid salmon;
         }
         select{
           width: 50%;
@@ -91,8 +107,7 @@ body {
           width: 75%;
           display: flex;
           justify-content: space-evenly;
-          margin: 20px auto;
-          box-sizing: border-box;
+          margin: 1.25rem auto;
           .calculateBMI {
             border: none;
             background-color: salmon;
@@ -121,19 +136,19 @@ body {
       }
     }
     .form-result{
+      max-width: 480px;
       background-color: var(--light-sky-blue);
-      width: 50%;
       padding: 1.5rem;
       margin: auto;
-      border-radius: 10px;;
-      min-height: 100%;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 24px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 1.25rem 1.5rem;
       .result {
         .bmi, .category {
           text-align: center;
           margin-bottom: 2rem;
         }
         .category {
+          margin-bottom: 2rem;
           font-size: 1.5rem;
           font-weight: bold;
         }
@@ -181,75 +196,221 @@ body {
     width: 100%;
     margin: auto;
     padding: 1rem;
-    border-radius: 10px;
-    .footer{
+    border-radius: .75rem;
+    .footer {
       position: absolute;
       background:var(--steel-blue);
       padding:30px 0px;
       text-align:center;
       left: 0;
       right: 0;
-      .row{
+      .row {
       width:100%;
       margin:1% 0%;
       padding:0.6% 0%;
       color: white;
       font-size:0.8rem;
-
-      .link {
+      }
+      .row .link {
         margin-bottom: 1.5rem;
       }
-    }
-      .row a{
+      .row a {
       text-decoration: none;
       color: white;
-      transition: 0.5s;
+      transition: 0.3s;
       }
-      .row a:hover{
+      .row a:hover {
       color: salmon;
       opacity: .9;
       font-size: larger;
       }
-      .row ul{
+      .row ul {
       width: 100%;
       }
-      .row ul li{
+      .row ul li {
       display: inline-block;
       margin: 0px 30px;
       }
-      .row a i{
+      .social a i {
       font-size:2em;
+      color: #fff;
       margin:0% 1%;
       }
     }
   }
 }
-
-@media (max-width:480px){
-  header {
+@media (max-width:640px){
+  .header {
     margin-bottom: .5rem;
     padding: .5rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px .75rem 1rem;
-    h1 {
+    .app_name {
       margin-bottom: 0.5rem ;
-      font-size: 1rem;
+      font-size: 2.75rem;
       }
-    h3 {
-      font-size: .5rem;
+    .punchline {
+      font-size: 1.25rem;
       margin-bottom: .25rem;
       }
+    .details {
+      font-size: 1rem;
+    }
   }
 
-  .footer{
-  text-align:left;
-  padding:5%;
-  }
-  .footer .row ul li{
-  display:block;
-  margin:10px 0px;
-  text-align:left;
-  }
-  .footer .row a i{
-  margin:0% 3%;
+  .main {
+    .form-input, .form-result, .tool-uses {
+      margin: .5rem;
+      gap: 1rem;
+    }
+    .form-input {
+      .form_input legend, .form_input label, .form_input input, .form_input select, .form_input span{
+        font-size: .75rem;
+      }
+      button {
+        font-size: .75rem;
+      }
+      .disclaimer {
+        font-size: .75rem;
+      }
+    }
+    .form-result {
+      .result {
+        .bmi, .category {
+          margin: 1rem 0;
+        }
+        .category {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        .activity-level {
+          font-size: .75rem;
+          margin-bottom: 1rem;
+        }
+        .advice {
+          font-size: .75rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+      .consult a {
+        font-size: .75rem;
+        padding: .125rem .5rem;
+        border-radius: .25rem;
+        }
+      }
+    .tool-uses {
+      h4 {
+        font-size: 1rem;
+      }
+      ol > li {
+        font-size: .75rem;
+      }
+    }
+    }
+
+  .footer {
+    text-align:left;
+    padding:5%;
+    .row, .row a {
+      font-size: .75rem;
+    }
+    .row ul li{
+      display:block;
+      margin:10px 0px;
+      text-align:left;
+    }
+    .social a i{
+      margin:0% 3%;
+    }
   }
 }
+
+@media (max-width:480px){
+  .header {
+    top:10;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px .75rem 1rem;
+    .app_name {
+      font-size: 2rem;
+      margin-bottom: 0.5rem ;
+      }
+    .punchline {
+      font-size: 1rem;
+      margin-bottom: .25rem;
+      }
+    .details {
+      font-size: .75rem;
+    }
+  }
+
+  .main {
+    display: block;
+    .form-input, .form-result, .tool-uses {
+      min-width: 300px;
+      margin: .5rem;
+      gap: 1rem;
+    }
+    .form-input {
+      .form_input legend, .form_input label, .form_input input, .form_input select, .form_input span{
+        font-size: .75rem;
+      }
+      button {
+        font-size: .75rem;
+      }
+      .disclaimer {
+        font-size: .75rem;
+      }
+    }
+    .form-result {
+      .result {
+        .bmi, .category {
+          margin: 1rem 0;
+        }
+        .category {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        .activity-level {
+          font-size: .75rem;
+          margin-bottom: 1rem;
+        }
+        .advice {
+          font-size: .75rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+      .consult a {
+        font-size: .75rem;
+        padding: .125rem .5rem;
+        border-radius: .25rem;
+        }
+      }
+    .tool-uses {
+      h4 {
+        font-size: 1rem;
+      }
+      ol > li {
+        font-size: .75rem;
+      }
+    }
+    }
+
+  .footer {
+    text-align:left;
+    padding:5%;
+    .row, .row a {
+      font-size: .75rem;
+    }
+    .row ul li{
+      display:block;
+      margin:10px 0px;
+      text-align:left;
+    }
+    .social a i{
+      margin:0% 3%;
+    }
+  }
+}
+
