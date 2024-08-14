@@ -1,120 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HMZ BMI Calculator</title>
 
-    <link href="resources/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HMZ BMI Calculator</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!--FONT AWESOME-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-  </head>
-  <body>
-    <header>
-      <h1>HMZ BMI Calculator</h1>
-      <h3>Achieve Your Health Goals: HMZ BMI Calculator</h3>
-      <article>
-        Unlock Your Best Self: Our BMI Calculator Makes It Easy! Track your body
-        mass index and get personalized insights to help you reach your health
-        goals. It’s time to take control, stay motivated, and feel great in your
-        own skin!
+  <link href="resources/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Goole Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <!--FONT AWESOME-->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <h1>HMZ BMI Calculator</h1>
+    <h3>Achieve Your Health Goals: HMZ BMI Calculator</h3>
+    <article>
+      Unlock Your Best Self: Our BMI Calculator Makes It Easy! Track your body
+      mass index and get personalized insights to help you reach your health
+      goals. It’s time to take control, stay motivated, and feel great in your
+      own skin!
+    </article>
+  </header>
+
+  <main class="main">
+    <aside class="form-input">
+      <form>
+        <label class="input gender" id="gender">
+          <legend>Gender</legend>
+          <input type="radio" id="male" name="gender" value="male" checked required />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" required />
+          <label for="female">Female</label>
+        </label>
+        <label class="input weight">
+          <legend>Weight</legend>
+          <input type="number" name="weight" id="weight" min="40" max="300" required /> <span>kg</span>
+        </label>
+        <label class="input height">
+          <legend>Height</legend>
+          <input type="number" name="height" id="height" min="80" max="250" required /> <span>cm</span>
+        </label>
+        <label class="input age">
+          <legend>Age</legend>
+          <input type="number" name="age" id="age" min="12" max="150" required /> <span>years</span>
+        </label>
+        <label class="input activity-level">
+          <legend>Workout Activity Level</legend>
+          <select name="activity-level" id="activity-level">
+            <option value="1.2" selected>Not Active</option>
+            <option value="1.375">Lightly Active</option>
+            <option value="1.55">Moderately Active</option>
+            <option value="1.725">Very Active</option>
+            <option value="1.9">Athlete</option>
+          </select>
+        </label>
+        <label class="buttons">
+          <button class="calculateBMI" type="submit">
+            Calculate BMI
+          </button>
+          <button class="reset-form" type="reset">Reset</button>
+        </label>
+      </form>
+      <article class="disclaimer">
+        <p><strong>HMZ BMI Calculator</strong> is a general tool for estimating body weight healthiness based on height
+          and weight only and may not be accurate for athletes, children, the elderly, or pregnant women. </p>
+        <p>Consult a healthcare professional for a comprehensive health assessment and personalized medical advice. Use
+          it as a guideline, not a definitive measure of health.</p>
       </article>
-    </header>
+    </aside>
 
-    <main class="main">
-      <aside class="form-input">
-        <form>
-          <div class="input gender" id="gender">
-            <legend>Gender</legend>
-            <input type="radio" id="male" name="gender" value="male" checked required/>
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female" required/>
-            <label for="female">Female</label>
-          </div>
-          <div class="input weight">
-            <legend>Weight</legend>
-            <input type="number" name="weight" id="weight" min="40" max="300" required/> <span>kg</span>
-          </div>
-          <div class="input height">
-            <legend>Height</legend>
-            <input type="number" name="height" id="height" min="80" max="250" required/> <span>cm</span>
-          </div>
-          <div class="input age">
-            <legend>Age</legend>
-            <input type="number" name="age" id="age" min="12" max="150" required/> <span>years</span>
-          </div>
-          <div class="input activity-level">
-            <legend>Activity Level</legend>
-            <select name="activity-level" id="activity-level">
-              <option value="1.2" selected>Not Active</option>
-              <option value="1.375">Lightly Active</option>
-              <option value="1.55">Moderately Active</option>
-              <option value="1.725">Very Active</option>
-              <option value="1.9">Athlete</option>
-            </select>
-          </div>
-          <div class="buttons">
-            <button class="calculateBMI" type="submit">
-              Calculate BMI
-            </button>
-            <button class="reset-form" type="reset">Reset</button>
-          </div>
-        </form>
-        <article class="disclaimer">
-          <p><strong>HMZ BMI Calculator</strong> is a general tool for estimating body weight healthiness based on height and weight only and may not be accurate for athletes, children, the elderly, or pregnant women. </p>
-          <p>Consult a healthcare professional for a comprehensive health assessment and personalized medical advice. Use it as a guideline, not a definitive measure of health.</p>
-        </article>
-      </aside>
+    <aside class="form-result" hidden>
+      <div class="result" id="result"></div>
+      <div class="consult">
+        <a href="#">Consult to a Doctor</a></div>
+    </aside>
 
-      <aside class="form-result" hidden>
-        <div class="result" id="result"></div>
-        <div class="consult">
-          <a href="#">Consult to a Doctor</a></div>
-      </aside>
-
-      <article class="tool-uses">
-        <h4>Primary Uses:</h4>
-          <ol>
-            <li><strong>Screening</strong>: BMI is often used as a screening tool to categorize individuals into different weight categories. This helps in identifying potential health risks associated with each category.</li>
-            <li><strong>Health Risks</strong>: High or low BMI values can indicate increased risks of various health conditions, eg:
-              <ul class="weight-class">
-                <li class="weight-class"><em>Underweight</em>: Can be associated with malnutrition, osteoporosis, and weakened immune function.
-                </li>
-                <li class="weight-class"><em>Overweight and Obesity</em>: Can be linked to higher risks of heart disease, diabetes, high blood pressure, and certain cancers.</li>
-              </ul>
+    <article class="tool-uses">
+      <h4>Primary Uses:</h4>
+      <ol>
+        <li><strong>Screening</strong>: BMI is often used as a screening tool to categorize individuals into different
+          weight categories. This helps in identifying potential health risks associated with each category.</li>
+        <li><strong>Health Risks</strong>: High or low BMI values can indicate increased risks of various health
+          conditions, eg:
+          <ul class="weight-class">
+            <li class="weight-class"><em>Underweight</em>: Can be associated with malnutrition, osteoporosis, and
+              weakened immune function.
             </li>
-            <li><strong>Tracking Changes</strong>: BMI can be used to monitor changes in body weight over time.</li>
-            <li><strong>Guiding Interventions</strong>: Based on BMI results, healthcare providers can recommend appropriate lifestyle changes, dietary adjustments, and physical activity to help individuals achieve a healthier weight.</li>
-          </ol>
-      </article>
-    </main>
-
-    <footer>
-      <div class="footer">
-        <div class="row link">
-          <ul>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li class="weight-class"><em>Overweight and Obesity</em>: Can be linked to higher risks of heart disease,
+              diabetes, high blood pressure, and certain cancers.</li>
           </ul>
-        </div>
+        </li>
+        <li><strong>Tracking Changes</strong>: BMI can be used to monitor changes in body weight over time.</li>
+        <li><strong>Guiding Interventions</strong>: Based on BMI results, healthcare providers can recommend appropriate
+          lifestyle changes, dietary adjustments, and physical activity to help individuals achieve a healthier weight.
+        </li>
+      </ol>
+    </article>
+  </main>
 
-        <div class="row">
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-youtube"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-        </div>
-        
-        <div class="row">
-        HMZ Copyright © 2024 HMZ - All rights reserved || Designed By: Yogi Arismet 
-        </div>
+  <footer>
+    <div class="footer">
+      <div class="row link">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
-    </footer>
 
-    <script src="js/script.js"></script>
-  </body>
+      <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+
+      <div class="row">
+        HMZ Copyright © 2024 HMZ - All rights reserved || Designed By: Yogi Arismet
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="js/script.js"></script>
+</body>
+
 </html>

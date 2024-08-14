@@ -11,11 +11,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
 }
 
 body {
   background: linear-gradient(135deg, rgba(238,174,202,.3) 0%, rgba(148,187,233,.5) 100%);
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 
   header {
@@ -25,8 +26,8 @@ body {
     position: sticky;
     top: 0;
     background-color: azure;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    h1 {  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 24px;
+    h1 {
       color: transparent;
       margin-bottom: 1.5rem ;
       font-size: 60px;
@@ -49,11 +50,10 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 80vw;
+    max-width: 90vw;
     margin: auto;
     margin-bottom: 1.5rem;
     gap: 1.5rem;
-    align-items: stretch;
     .form-input, .form-result, .tool-uses {
       flex:1 0 41%;
       margin: 1rem;
@@ -62,69 +62,62 @@ body {
     .form-input{
       background-color: var(--light-sky-blue);
       padding: 1rem;
-      margin: auto;
+      margin: 1rem auto;
       border-radius: 10px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 24px;
       form {
-        * {
+        input:not([type=radio]), select {
           border: none;
           border-radius: .25rem;
-        }
-        input:not([type=radio]) {
           text-align: right;
           width: 50%;
           line-height: 1.5rem;
           padding-right: .25rem;
-          margin-right: .7rem;
-          font-size: 1rem;
+          font-size: .75rem;
         }
         .input {
-          margin-top: .75rem;
-          margin-bottom: .75rem;
+          margin: 2rem auto;
           width: 100%;
+          box-sizing: border-box;
         }:invalid{
-          margin: 0;
-          border: 1px solid salmon;
+          border: -1px solid salmon;
         }
         select{
           width: 50%;
           line-height: 1.5rem;
           padding: .5rem;
         }
-      }
-      .buttons {
-        width: 75%;
-        display: flex;
-        justify-content: space-evenly;
-        margin: 20px auto;
-        /* border: 1px solid salmon; */
-        box-sizing: border-box;
-        .calculateBMI {
-          border: none;
-          background-color: salmon;
-          justify-items: center;
-          border-radius: 10px;
-          transition: all 0.3s;
-          padding: .5rem 1.5rem;
+        .buttons {
+          width: 75%;
+          display: flex;
+          justify-content: space-evenly;
+          margin: 20px auto;
           box-sizing: border-box;
-          color: white;
+          .calculateBMI {
+            border: none;
+            background-color: salmon;
+            justify-items: center;
+            border-radius: .5rem;
+            transition: all 0.3s;
+            padding: .5rem 1.5rem;
+            color: white;
+          }
+          .calculateBMI:hover {
+            background-color: whitesmoke;
+            color: salmon;
+          }
+          .reset-form {
+            min-width: 25%;
+            border: none;
+            background-color:var(--serene);
+            transition: all 0.3s;
+            border-radius: .5rem;
+            color: white;
+          }:hover {
+            background-color: slategray;
+            color: whitesmoke;
+          }
         }
-        .calculateBMI:hover {
-          background-color: whitesmoke;
-          color: salmon;
-          font-weight: bold;
-        }
-        .reset-form {
-          min-width: 25%;
-          border: none;
-          background-color:var(--serene);
-          transition: all 0.3s;
-          border-radius: 10px;
-          color: white;
-        }:hover {
-          background-color: slategray;
-          color: whitesmoke;
-      }
       }
     }
     .form-result{
@@ -134,7 +127,7 @@ body {
       margin: auto;
       border-radius: 10px;;
       min-height: 100%;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 24px;
       .result {
         .bmi, .category {
           text-align: center;
@@ -162,11 +155,13 @@ body {
         text-decoration: none;
         padding: .25rem 1rem .25rem 1rem;
         border-radius: .25rem;
+      }:hover{
+        background-color: whitesmoke;
+        color: salmon;
       }
     }
     }
     .tool-uses {
-      /* max-width: 90%; */
       margin: auto;
       margin-bottom: 1.5rem;
       padding: 1.5rem;
@@ -191,7 +186,6 @@ body {
       position: absolute;
       background:var(--steel-blue);
       padding:30px 0px;
-      /* font-family: 'Play', sans-serif; */
       text-align:center;
       left: 0;
       right: 0;
@@ -200,27 +194,28 @@ body {
       margin:1% 0%;
       padding:0.6% 0%;
       color: white;
-      font-size:0.8em;
+      font-size:0.8rem;
+
       .link {
         margin-bottom: 1.5rem;
       }
-      }
+    }
       .row a{
-      text-decoration:none;
-      color:white;
-      transition:0.5s;
+      text-decoration: none;
+      color: white;
+      transition: 0.5s;
       }
       .row a:hover{
-      color:salmon;
+      color: salmon;
       opacity: .9;
       font-size: larger;
       }
       .row ul{
-      width:100%;
+      width: 100%;
       }
       .row ul li{
-      display:inline-block;
-      margin:0px 30px;
+      display: inline-block;
+      margin: 0px 30px;
       }
       .row a i{
       font-size:2em;
@@ -230,7 +225,21 @@ body {
   }
 }
 
-@media (max-width:720px){
+@media (max-width:480px){
+  header {
+    margin-bottom: .5rem;
+    padding: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px .75rem 1rem;
+    h1 {
+      margin-bottom: 0.5rem ;
+      font-size: 1rem;
+      }
+    h3 {
+      font-size: .5rem;
+      margin-bottom: .25rem;
+      }
+  }
+
   .footer{
   text-align:left;
   padding:5%;
@@ -243,4 +252,4 @@ body {
   .footer .row a i{
   margin:0% 3%;
   }
-  }
+}
